@@ -72,6 +72,21 @@ npm run dev
 
 App runs at `http://localhost:5173`
 
+## Live Backend (Render)
+
+```
+https://planova-web-aa8s.onrender.com
+```
+
+Health check: `https://planova-web-aa8s.onrender.com/api/health`
+
+Frontend production build uses:
+
+```
+VITE_API_URL=https://planova-web-aa8s.onrender.com/api
+```
+
+
 ## API Endpoints
 
 | Method | Endpoint                 | Purpose                |
