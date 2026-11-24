@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-deep-purple: #211A35;
+  --color-primary: #7656D6;
+  --color-lavender: #B69AF7;
+  --color-bg: #F5F1FC;
+  --color-light-purple: #D9C9F5;
+  --color-text-main: #241D35;
+  --color-text-secondary: #827A91;
+  --color-white: #FFFFFF;
+  --color-border: #E8E0F4;
+  --color-success: #16A36A;
+  --color-warning: #E5A13A;
+  --color-danger: #E45D72;
+
+  --color-dark-bg: #171321;
+  --color-dark-sidebar: #211A35;
+  --color-dark-card: #29223B;
+  --color-dark-primary: #9678ED;
+  --color-dark-lavender: #B69AF7;
+  --color-dark-text: #F7F3FF;
+  --color-dark-text-secondary: #B7AEC8;
+  --color-dark-border: #403650;
+
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --radius-card: 14px;
+  --radius-btn: 12px;
+  --radius-modal: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dark body,
+html.dark body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-purple);
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-light-purple) 0%,
+    #ebe4f8 50%,
+    var(--color-light-purple) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 10px;
+}
+
+.dark .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-dark-card) 0%,
+    #342c4a 50%,
+    var(--color-dark-card) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
