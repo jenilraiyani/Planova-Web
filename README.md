@@ -86,6 +86,23 @@ Frontend production build uses:
 VITE_API_URL=https://planova-web-aa8s.onrender.com/api
 ```
 
+## Deploy Frontend on Vercel
+
+1. Go to https://vercel.com → **Add New Project**
+2. Import GitHub repo: `jenilraiyani/Planova-Web`
+3. Configure:
+   - **Root Directory:** `frontend`
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+4. Environment Variable:
+   - `VITE_API_URL` = `https://planova-web-aa8s.onrender.com/api`
+5. Click **Deploy**
+6. After deploy, copy your Vercel URL (e.g. `https://planova-web.vercel.app`)
+7. On Render backend → Environment → set:
+   - `FRONTEND_URL` = your Vercel URL
+
+
 
 ## API Endpoints
 
